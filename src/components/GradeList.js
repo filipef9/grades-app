@@ -20,8 +20,7 @@ const GradeList = () => {
   const retrieveGrade = () => {
     GradeDataService.getAll()
       .then((response) => {
-        setGrade(response.data);
-        console.log(response.data);
+        setGrade(response.data.grades);
       })
       .catch((e) => {
         console.log(e);
@@ -53,8 +52,7 @@ const GradeList = () => {
   const findByName = () => {
     GradeDataService.findByName(searchName)
       .then((response) => {
-        setGrade(response.data);
-        console.log(response.data);
+        setGrade(response.data.grades);
       })
       .catch((e) => {
         console.log(e);
